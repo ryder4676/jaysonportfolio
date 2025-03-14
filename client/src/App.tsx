@@ -13,6 +13,14 @@ import AuthPage from "@/pages/auth-page";
 import { ProtectedRoute } from "@/lib/protected-route";
 import { AuthProvider } from "@/hooks/use-auth";
 
+// Demo Projects
+import TechMarketDemo from "@/demos/techmarket";
+import TaskFlowDemo from "@/demos/taskflow";
+import AnalyticsDemo from "@/demos/analytics";
+import HealthTrackDemo from "@/demos/healthtrack";
+import BoutiqueStoreDemo from "@/demos/boutiquestore";
+import CorporatePortalDemo from "@/demos/corporateportal";
+
 function Router() {
   return (
     <Switch>
@@ -23,6 +31,15 @@ function Router() {
       <Route path="/analyze" component={WebsiteAnalyzer} />
       <Route path="/auth" component={AuthPage} />
       <ProtectedRoute path="/admin" component={AdminPage} adminOnly={true} />
+      
+      {/* Demo Project Routes */}
+      <Route path="/demos/techmarket" component={TechMarketDemo} />
+      <Route path="/demos/taskflow" component={TaskFlowDemo} />
+      <Route path="/demos/analytics" component={AnalyticsDemo} />
+      <Route path="/demos/healthtrack" component={HealthTrackDemo} />
+      <Route path="/demos/boutiquestore" component={BoutiqueStoreDemo} />
+      <Route path="/demos/corporateportal" component={CorporatePortalDemo} />
+      
       <Route component={NotFound} />
     </Switch>
   );
