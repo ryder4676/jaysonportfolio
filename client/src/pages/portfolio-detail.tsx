@@ -362,10 +362,12 @@ export default function PortfolioDetail() {
 
           {project.projectLink && (
             <div className="mt-8 flex justify-center">
-              <Button className="flex items-center gap-2" size="lg">
-                Visit Project
-                <ExternalLink className="h-4 w-4" />
-              </Button>
+              <Link href={`/demos/${project.id.toLowerCase()}`}>
+                <Button className="flex items-center gap-2" size="lg">
+                  Visit Demo
+                  <ExternalLink className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           )}
         </div>

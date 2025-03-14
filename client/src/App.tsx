@@ -14,12 +14,12 @@ import { ProtectedRoute } from "@/lib/protected-route";
 import { AuthProvider } from "@/hooks/use-auth";
 
 // Demo Projects
-import TechMarketDemo from "@/demos/techmarket";
-import TaskFlowDemo from "@/demos/taskflow";
-import AnalyticsDemo from "@/demos/analytics";
-import HealthTrackDemo from "@/demos/healthtrack";
-import BoutiqueStoreDemo from "@/demos/boutiquestore";
-import CorporatePortalDemo from "@/demos/corporateportal";
+import TechMarketDemo from "./demos/techmarket";
+import TaskFlowDemo from "./demos/taskflow";
+import AnalyticsDemo from "./demos/analytics";
+import HealthTrackDemo from "./demos/healthtrack";
+import BoutiqueStoreDemo from "./demos/boutiquestore";
+import CorporatePortalDemo from "./demos/corporateportal";
 
 function Router() {
   return (
