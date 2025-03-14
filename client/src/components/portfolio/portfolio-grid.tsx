@@ -3,7 +3,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { SiReact, SiNodedotjs, SiTypescript, SiMongodb, SiVuedotjs, SiD3Dotjs, SiExpress, SiFirebase, SiFlutter } from "react-icons/si";
+import { 
+  SiReact, 
+  SiNodedotjs, 
+  SiTypescript, 
+  SiMongodb, 
+  SiVuedotjs, 
+  SiD3Dotjs, 
+  SiExpress, 
+  SiFirebase, 
+  SiFlutter 
+} from "react-icons/si";
 
 // Define portfolio item type
 type PortfolioItem = {
@@ -234,25 +244,27 @@ export default function PortfolioGrid() {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filteredItems.map((item) => (
-          <Card key={item.id} className="overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="relative">
-              {item.image}
-              <div className="absolute inset-0 bg-primary bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <Button variant="secondary" size="sm" className="flex items-center gap-1">
-                  View Details <ExternalLink className="h-4 w-4 ml-1" />
-                </Button>
+          <Link href={`/portfolio/${item.id}`} key={item.id}>
+            <Card className="overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <div className="relative">
+                {item.image}
+                <div className="absolute inset-0 bg-primary bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <Button variant="secondary" size="sm" className="flex items-center gap-1">
+                    View Details <ExternalLink className="h-4 w-4 ml-1" />
+                  </Button>
+                </div>
               </div>
-            </div>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-              <p className="mt-2 text-gray-600">{item.description}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {item.technologies.map((tech, index) => (
-                  <TechTag key={index} {...tech} />
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+                <p className="mt-2 text-gray-600">{item.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {item.technologies.map((tech, index) => (
+                    <TechTag key={index} {...tech} />
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
 

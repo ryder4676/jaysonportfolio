@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li className="flex">
                 <FaMapMarkerAlt className="h-5 w-5 text-primary mr-2 mt-1" />
-                <span className="text-base text-gray-400">Edmonton, AB, Canada</span>
+                <span className="text-base text-gray-400">Calgary, AB, Canada</span>
               </li>
             </ul>
           </div>

@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/home-page";
 import PortfolioPage from "@/pages/portfolio-page";
+import PortfolioDetail from "@/pages/portfolio-detail";
 import ContactPage from "@/pages/contact-page";
 import WebsiteAnalyzer from "@/pages/website-analyzer";
 import AdminPage from "@/pages/admin-page";
@@ -17,6 +18,7 @@ function Router() {
     <Switch>
       <Route path="/" component={HomePage} />
       <Route path="/portfolio" component={PortfolioPage} />
+      <Route path="/portfolio/:id" component={PortfolioDetail} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/analyze" component={WebsiteAnalyzer} />
       <Route path="/auth" component={AuthPage} />
