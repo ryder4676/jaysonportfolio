@@ -70,7 +70,7 @@ export default function AnalyzerForm() {
     onSuccess: () => {
       toast({
         title: "Analysis request submitted",
-        description: "We'll send you a detailed analysis within 48 hours.",
+        description: "We'll send you a confirmation email and a detailed analysis within 48 hours.",
       });
       setIsSubmitted(true);
     },
@@ -100,7 +100,7 @@ export default function AnalyzerForm() {
                 <h3 className="text-sm font-medium text-green-300">Analysis Request Submitted</h3>
                 <div className="mt-2 text-sm text-green-200">
                   <p>
-                    Thank you for submitting your website for analysis. I'll review your site thoroughly and send a detailed report to your email within 48 hours. This will include actionable recommendations, visual mockups, cost estimates, and a timeline for improvements.
+                    Thank you for submitting your website for analysis. You should receive a confirmation email shortly. I'll review your site thoroughly and send a detailed report to your email within 48 hours. This will include actionable recommendations, visual mockups, cost estimates, and a timeline for improvements.
                   </p>
                 </div>
               </div>

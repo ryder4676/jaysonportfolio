@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { generateProjectSuggestions, analyzeWebsite, generateAiResponse } from "./openai";
 import { sendNewClientNotification, sendWebsiteAnalysisNotification } from "./twilio";
+import { sendWebsiteAnalysisConfirmation, sendAdminWebsiteAnalysisNotification } from "./email";
 import { insertProjectRequestSchema, insertWebsiteAnalysisSchema, insertAiMessageSchema } from "@shared/schema";
 import { scrypt, randomBytes, timingSafeEqual } from "crypto";
 import { promisify } from "util";
@@ -11,6 +12,26 @@ import { Strategy as LocalStrategy } from "passport-local";
 import session from "express-session";
 import { nanoid } from "nanoid";
 import { z } from "zod";
+
+// Extend the Express session type to include our custom properties
+declare module 'express-session' {
+  interface SessionData {
+    aiChatId?: string;
+  }
+}
+
+// Extend the Express.User interface to include our custom properties
+declare global {
+  namespace Express {
+    interface User {
+      id: number;
+      username: string;
+      email: string;
+      password: string;
+      isAdmin?: boolean;
+    }
+  }
+}
 
 const scryptAsync = promisify(scrypt);
 
@@ -93,11 +114,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertWebsiteAnalysisSchema.parse(req.body);
       const newAnalysis = await storage.createWebsiteAnalysis(validatedData);
       
-      // Send SMS notification
+      // Send SMS notification to admin
       await sendWebsiteAnalysisNotification(
         newAnalysis.websiteUrl,
         newAnalysis.email
       );
+      
+      // Send confirmation email to the user
+      await sendWebsiteAnalysisConfirmation(
+        newAnalysis.email,
+        newAnalysis.websiteUrl
+      );
+      
+      // Send detailed notification email to admin
+      await sendAdminWebsiteAnalysisNotification(newAnalysis);
       
       // Trigger AI analysis in the background
       analyzeWebsite(

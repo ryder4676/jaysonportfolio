@@ -4,7 +4,13 @@ import {
   Smartphone, 
   Settings, 
   BarChart2, 
-  Palette
+  Palette,
+  Cloud,
+  Lock,
+  PenTool,
+  Zap,
+  MessageSquare,
+  Database
 } from "lucide-react";
 
 type ServiceCardProps = {
@@ -51,44 +57,86 @@ const ServiceCard = ({ title, description, features, price, icon: Icon }: Servic
 export default function ServicesSection() {
   const services = [
     {
-      title: "Business Websites",
-      description: "Professional websites for businesses of all sizes",
-      features: ["Responsive design", "SEO optimization", "Content management"],
+      title: "Website Development",
+      description: "Professional custom websites built from scratch",
+      features: ["Custom design & development", "E-commerce websites", "CMS implementation", "Landing page creation"],
       price: "From $3,000",
       icon: Globe,
     },
     {
-      title: "E-commerce Solutions",
-      description: "Complete online stores with payment processing",
-      features: ["Product management", "Shopping cart & checkout", "Payment gateway integration"],
-      price: "From $7,500",
-      icon: ShoppingCart,
+      title: "Website Maintenance",
+      description: "Keep your website secure, updated and running smoothly",
+      features: ["Security updates & monitoring", "Performance optimization", "Content updates", "Hosting & domain management"],
+      price: "From $500/mo",
+      icon: Lock,
     },
     {
-      title: "Mobile Applications",
-      description: "Native and cross-platform mobile apps",
-      features: ["iOS & Android development", "React Native/Flutter", "App store submission"],
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications",
+      features: ["iOS & Android development", "React Native apps", "UI/UX design", "App maintenance & updates"],
       price: "From $10,000",
       icon: Smartphone,
     },
     {
-      title: "Web Applications",
+      title: "Web & Mobile Optimization",
+      description: "Improve performance, SEO and user experience",
+      features: ["SEO optimization", "Mobile responsiveness", "Speed optimization", "Conversion rate optimization"],
+      price: "From $1,500",
+      icon: Zap,
+    },
+    {
+      title: "E-commerce Solutions",
+      description: "Complete online stores with payment processing",
+      features: ["Payment gateway integration", "Inventory management", "Online marketing", "Marketplace integration"],
+      price: "From $7,500",
+      icon: ShoppingCart,
+    },
+    {
+      title: "Cloud Services",
+      description: "Secure, scalable cloud infrastructure and applications",
+      features: ["Cloud hosting & migration", "Cloud-based applications", "Data backup & recovery", "Serverless architecture"],
+      price: "From $2,000",
+      icon: Cloud,
+    },
+    {
+      title: "UI/UX Design Services",
+      description: "Create intuitive, engaging user experiences",
+      features: ["User research & analysis", "Wireframing & prototyping", "Graphic design & branding", "User testing"],
+      price: "From $3,500",
+      icon: PenTool,
+    },
+    {
+      title: "Web Application Development",
       description: "Custom web applications with complex functionality",
-      features: ["User authentication", "Database integration", "Third-party API integration"],
+      features: ["Custom web applications", "SaaS development", "CRM/ERP systems", "API development & integration"],
       price: "From $8,000",
       icon: Settings,
     },
     {
-      title: "Admin Dashboards",
-      description: "Custom admin panels and data visualization",
-      features: ["Data analytics", "User management", "Reporting tools"],
-      price: "From $5,000",
+      title: "Digital Marketing Integration",
+      description: "Connect your web presence with marketing tools",
+      features: ["Social media marketing setup", "Email marketing campaigns", "PPC advertising management", "Content marketing strategy"],
+      price: "From $1,800",
+      icon: MessageSquare,
+    },
+    {
+      title: "Data & Analytics",
+      description: "Make data-driven decisions with powerful analytics",
+      features: ["Analytics implementation", "Data visualization", "Reporting dashboards", "Data-driven recommendations"],
+      price: "From $2,500",
+      icon: Database,
+    },
+    {
+      title: "Accessibility Services",
+      description: "Make your digital products accessible to everyone",
+      features: ["WCAG compliance", "Accessibility audits", "Remediation services", "Accessible design patterns"],
+      price: "From $1,500",
       icon: BarChart2,
     },
     {
       title: "Website Redesign",
       description: "Transform your existing website with modern design",
-      features: ["UI/UX improvements", "Performance optimization", "Mobile responsiveness"],
+      features: ["UI/UX improvements", "Modern technology stack", "Performance optimization", "Brand consistency"],
       price: "From $2,500",
       icon: Palette,
     },
@@ -100,10 +148,10 @@ export default function ServicesSection() {
         <div className="lg:text-center">
           <h2 className="text-base text-primary font-semibold tracking-wide uppercase">Services</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Solutions tailored to your needs
+            Comprehensive Web & Mobile Solutions
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Choose from a variety of web and mobile application development services, each with transparent pricing.
+          <p className="mt-4 max-w-3xl text-xl text-gray-500 lg:mx-auto">
+            From initial design to ongoing maintenance, we offer end-to-end digital services to help your business thrive online. All services include transparent pricing and personalized approaches.
           </p>
         </div>
 

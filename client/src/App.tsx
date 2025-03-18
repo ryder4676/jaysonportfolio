@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/home-page";
 import PortfolioPage from "@/pages/portfolio-page";
 import PortfolioDetail from "@/pages/portfolio-detail";
+import ServicesPage from "@/pages/services-page";
 import ContactPage from "@/pages/contact-page";
 import WebsiteAnalyzer from "@/pages/website-analyzer";
 import AdminPage from "@/pages/admin-page";
